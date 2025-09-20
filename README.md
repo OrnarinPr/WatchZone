@@ -12,7 +12,7 @@
 สร้างไฟล์ `Frontend/.env`:
 ```env
 VITE_SUPABASE_URL=https://YOUR-PROJECT-REF.supabase.co
-VITE_SUPABASE_ANON_KEY=YOUR_ANON_KEY ```
+VITE_SUPABASE_ANON_KEY=YOUR_ANON_KEY
 
 ### 2) Install & Run Frontend
 cd Frontend
@@ -27,7 +27,8 @@ pnpm run dev
 เข้า Supabase → SQL Editor → รัน db/schema.sql
 จะสร้างตาราง, view, RPC, triggers, mock data และ full_id แบบรันแยกตาม type (A-0001, B-0001 …)
 
-Project Structure
+### Project Structure
+```
 Frontend/
   public/
     WZ.png                # โลโก้ app
