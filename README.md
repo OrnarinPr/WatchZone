@@ -75,18 +75,17 @@ pnpm run build     # สร้าง production build (ออกที่ dist/)
 pnpm run preview   # เสิร์ฟไฟล์จาก dist/ เพื่อตรวจ build
 ```
 
-> สำหรับ deploy จริง แนะนำให้เสิร์ฟ `dist/` ผ่าน nginx / static host และตั้งค่า `VITE_*` ให้ถูก environment
 
 ---
 
-## Quick Start (คลีนๆ ภายใน 3 คำสั่ง)
+## Quick Start 
 ```bash
 # 1) ติดตั้ง
 cd Frontend && pnpm install
 
 # 2) ตั้งค่า env
 cp .env.example .env   # ถ้ามีไฟล์ตัวอย่าง
-# แล้วเติมค่า VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY
+# แล้วเติมค่า VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY  นะ
 
 # 3) รัน
 pnpm run dev
