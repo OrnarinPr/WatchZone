@@ -20,32 +20,19 @@ VITE_SUPABASE_ANON_KEY=YOUR_ANON_KEY
 ---
 
 ## 2) Install & Run 
-# (Frontend)
+### (Frontend)
 ```bash
 cd Frontend
 pnpm install
 pnpm run dev
 ```
 เปิด: http://localhost:5173
-# (Backend)
+### (Backend)
 ```bash
 cd Backend
 uvicorn main:app --host 0.0.0.0 --port 8201 --reload
 ```
 
----
-
-## 3) Database (apply once)
-เข้า **Supabase → SQL Editor** แล้วรันไฟล์ `db/schema.sql` จากโปรเจกต์นี้  
-สคริปต์จะสร้าง:
-- ตาราง, View, RPC, Triggers
-- Mock data
-- ระบบ `full_id` แยกตาม type (เช่น `A-0001`, `B-0001` …)
-- (ถ้าตั้งค่าไว้) RLS Policies
-
-> ถ้าเปิด RLS แล้วอ่าน/เขียนไม่ได้ ให้ตรวจ roles/policies ของตารางที่เกี่ยวข้อง
-
----
 
 ## Project Structure
 ```
