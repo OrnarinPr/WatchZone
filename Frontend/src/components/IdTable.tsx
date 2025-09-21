@@ -2,6 +2,7 @@
 import type { Row } from "../types";
 import StatusBadge from "./StatusBadge";
 import ActionButtons from "./ActionButtons";
+import GenerateLinkButton from "./GenerateLinkButton";
 
 export default function IdTable({
   rows,
@@ -40,7 +41,7 @@ export default function IdTable({
 
             <tbody>
               {rows.map((r, idx) => {
-                const showTimes = r.status === "in_use"; // แสดงเวลาเฉพาะตอน in_use
+                const showTimes = r.status === "in_use";
                 return (
                   <tr
                     key={r.id}
@@ -75,14 +76,26 @@ export default function IdTable({
                       {showTimes ? remaining(r) : "-"}
                     </td>
 
+                    {/* Actions + ปุ่มขอลิงก์ ต่อท้าย */}
                     <td className="px-5 py-4 whitespace-nowrap">
-                      <ActionButtons
-                        id={r.id}
-                        status={r.status}
-                        busy={busyId === r.id}
-                        onRelease={onRelease}
-                        onExtend={onExtend}
-                      />
+                      <div className="flex items-center gap-2">
+                        <ActionButtons
+                          id={r.id}
+                          status={r.status}
+                          busy={busyId === r.id}
+                          onRelease={onRelease}
+                          onExtend={onExtend}
+                        />
+                        {r.status === "in_use" && (
+                          <GenerateLinkButton
+                            data={{
+                              full_id: r.full_id,
+                              username: r.username ?? null,
+                              password: r.password ?? null,
+                            }}
+                          />
+                        )}
+                      </div>
                     </td>
                   </tr>
                 );
